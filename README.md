@@ -84,3 +84,12 @@ async function handler(event,ctx){
   return await w.handleAPIGateway(event,ctx)
 }
 ```
+
+## Custom 
+```
+const wambda = require("wambda")
+const w = wambda.load("hello.swagger");
+...
+let response = w.run({path:"/hello",method:"GET"});
+...
+```
