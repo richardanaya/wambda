@@ -1,6 +1,6 @@
 # wambda
 
-Write lambda handlers that can run anywhere.
+Write HTTP handlers that can run anywhere.
 * Plain old servers
 * AWS Lambda
 * Embedded
