@@ -44,7 +44,7 @@ info:
 paths:
   /hello:
     get:
-      x-wasm: "hello.wasm"
+      x-wasm-lambda: "hello.wasm"
       responses:
         200:
           description: "Invalid input"
