@@ -63,15 +63,16 @@ wambda run
 use wambda;
 
 fn main() -> () {
-  wambda.runHTTPServer("hello.swagger")
+  let w = wambda.load("hello.swagger");
+  w.runHTTPServer("hello.swagger")
 }
 ```
 
 ## Lambda
 ```js
-let wambda = require("wambda")
-
+const wambda = require("wambda")
+const w = wambda.load("hello.swagger");
 async function handler(event,ctx){
-  return await wambda.handleAPIGateway(event,ctx)
+  return await w.handleAPIGateway(event,ctx)
 }
 ```
