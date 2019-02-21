@@ -1,0 +1,24 @@
+{
+  "name": "wambda",
+  "version": "0.0.1",
+  "description": "Run HTTP handlers written in web assembly anywhere",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardanaya/wambda.git"
+  },
+  "keywords": [
+    "wasm",
+    "lambda",
+    "http"
+  ],
+  "author": "Richard Anaya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richardanaya/wambda/issues"
+  },
+  "homepage": "https://github.com/richardanaya/wambda#readme"
+}
