@@ -15,8 +15,9 @@ Write lambda handlers that can run anywhere.
 * returns a handle that will be used when calling back
 extern int httpRequest(int request);
 
-// For receiving http
-// * the handle that was used when httpRequest was called 
+// Called when HTTP request is complete
+// * requestID - the ID that was returned when httpRequest was called 
+// * response - a pointer in memory to json string of response
 void httpResponse(int requestID, int response){
 
 }
