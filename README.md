@@ -76,7 +76,7 @@ fn main() -> () {
 }
 ```
 
-## Lambda
+## AWS Lambda
 ```js
 const wambda = require("wambda")
 const w = wambda.load("hello.swagger");
