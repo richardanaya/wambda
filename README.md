@@ -43,6 +43,8 @@ int malloc(int len){
 ```
 
 # Define an HTTP
+Writing a swagger will allow routing and input validation to the appropriate web assembly module
+
 ```swagger
 swagger: "2.0"
 info:
