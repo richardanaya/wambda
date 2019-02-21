@@ -1,0 +1,9 @@
+[package]
+name = "wambda"
+version = "0.0.0"
+authors = ["Richard Anaya"]
+edition = "2018"
+description = "run lambda server with web assembly modules"
+license = "MIT"
+
+[dependencies]
