@@ -34,6 +34,12 @@ extern void callback(int response);
 void execute(int event, int context) {
   callback(&"{\"status\":200, \"body\":\"hello world!\"")
 }
+
+// Called when the host needs to allocate memory to send to module
+// len - length in bytes needed by host
+int malloc(int len){
+  ...
+}
 ```
 
 # Define an HTTP
