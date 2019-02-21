@@ -35,7 +35,7 @@ void execute(int event, int context) {
   callback(&"{\"status\":200, \"body\":\"hello world!\"")
 }
 
-// Called when the host needs to allocate memory to send to module
+// Called when the host needs to allocate memory to send to web assembly module
 // len - length in bytes needed by host
 int malloc(int len){
   ...
