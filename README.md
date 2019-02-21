@@ -58,10 +58,20 @@ wambda run
 
 # Run Anywhere
 
+## Server
 ```rust
 use wambda;
 
 fn main() -> () {
   wambda.runHTTPServer("hello.swagger")
+}
+```
+
+## Lambda
+```js
+let wambda = require("wambda")
+
+async function handler(event,ctx){
+  return await wambda.handleAPIGateway(event,ctx)
 }
 ```
