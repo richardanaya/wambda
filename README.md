@@ -9,7 +9,7 @@ Write HTTP handlers that can run anywhere.
 
 # A simple spec
 
-To create a lambda, your web assembly module simply needs to adhere to a simple spec:
+To create a HTTP handler, your web assembly module simply needs to adhere to a simple spec:
 
 ```C
 // For making HTTP requests to outside world
