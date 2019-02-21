@@ -9,7 +9,7 @@ Write HTTP handlers that can run anywhere.
 
 # A simple spec
 
-To create a lambda, your web assembly module simply needs to adhere to a simple spec:
+To create a HTTP handler, your web assembly module simply needs to adhere to a simple spec:
 
 ```C
 // For making HTTP requests to outside world
@@ -43,6 +43,8 @@ int malloc(int len){
 ```
 
 # Define an HTTP
+Writing a swagger will allow routing and input validation to the appropriate web assembly module
+
 ```swagger
 swagger: "2.0"
 info:
@@ -61,7 +63,7 @@ paths:
 # Run a local server
 
 ```
-wambda run
+wambda run -p 8080
 ```
 
 # Run Anywhere
@@ -72,7 +74,7 @@ use wambda;
 
 fn main() -> () {
   let w = wambda.load("hello.swagger");
-  w.runHTTPServer("hello.swagger")
+  w.runHTTPServer()
 }
 ```
 
@@ -90,6 +92,6 @@ async function handler(event,ctx){
 const wambda = require("wambda")
 const w = wambda.load("hello.swagger");
 ...
-let response = w.run({path:"/hello",method:"GET"});
+let response = w.run({path:"/hello",method:"GET"},{env:"my custom host"});
 ...
 ```
