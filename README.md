@@ -63,7 +63,7 @@ paths:
 # Run a local server
 
 ```
-wambda run
+wambda run -p 8080
 ```
 
 # Run Anywhere
