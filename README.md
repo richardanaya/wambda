@@ -74,7 +74,7 @@ use wambda;
 
 fn main() -> () {
   let w = wambda.load("hello.swagger");
-  w.runHTTPServer("hello.swagger")
+  w.runHTTPServer()
 }
 ```
 
