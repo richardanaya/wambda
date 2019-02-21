@@ -86,7 +86,7 @@ async function handler(event,ctx){
 ```
 
 ## Custom 
-```
+```js
 const wambda = require("wambda")
 const w = wambda.load("hello.swagger");
 ...
