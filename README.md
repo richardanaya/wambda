@@ -62,6 +62,6 @@ wambda run
 use wambda;
 
 fn main() -> () {
-  wambda.run("hello.swagger")
+  wambda.runHTTPServer("hello.swagger")
 }
 ```
