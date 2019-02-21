@@ -5,6 +5,7 @@ Write lambda handlers that can run anywhere.
 * AWS Lambda
 * Embedded
 * Edge networks
+* Binary protocols (protobuffs,websockets,etc.)
 
 # A simple spec
 
