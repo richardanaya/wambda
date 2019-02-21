@@ -38,16 +38,16 @@ void execute(int event, int context) {
 ```swagger
 swagger: "2.0"
 info:
-  description: "this is my api"
+  description: "A minimal API that says hello world"
   version: "1.0.0"
-  title: "Swagger Petstore"
+  title: "Swagger HelloWorld"
 paths:
   /hello:
     get:
       x-wasm-lambda: "hello.wasm"
       responses:
         200:
-          description: "Invalid input"
+          description: "Returns hello world"
 ```
 
 # Run a local server
