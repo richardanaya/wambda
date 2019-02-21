@@ -30,6 +30,38 @@ extern void callback(int response);
 // * event - pointer in memory to json string of event
 // * context - pointer in memory to json string of context in which this server is run ( host specific )
 void execute(int event, int context) {
+  callback(&"{\"status\":200, \"body\":\"hello world!\"")
+}
+```
 
+# Define an HTTP
+```swagger
+swagger: "2.0"
+info:
+  description: "this is my api"
+  version: "1.0.0"
+  title: "Swagger Petstore"
+paths:
+  /hello:
+    get:
+      x-wasm: "hello.wasm"
+      responses:
+        200:
+          description: "Invalid input"
+```
+
+# Run a local server
+
+```
+wambda run
+```
+
+# Run Anywhere
+
+```rust
+use wambda;
+
+fn main() -> () {
+  wambda.run("hello.swagger")
 }
 ```
