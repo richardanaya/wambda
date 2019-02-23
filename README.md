@@ -15,29 +15,29 @@ To create a HTTP handler, your web assembly module simply needs to adhere to a s
 // For making HTTP requests to outside world
 * request - pointer in memory to json string of request
 * returns a handle that will be used when calling back
-extern int httpRequest(int request);
+extern int httpRequest(void* request);
 
 // Called when HTTP request is complete
 // * requestID - the ID that was returned when httpRequest was called 
 // * response - a pointer in memory to json string of response
-void httpResponse(int requestID, int response){
+void httpResponse(int requestID, void* response){
 
 }
 
 // Respond to server to deliver response
 // * response - pointer in memory to json string of response
-extern void callback(int response);
+extern void callback(void* response);
 
 // Called when served
 // * event - pointer in memory to json string of event
 // * context - pointer in memory to json string of context in which this server is run ( host specific )
-void execute(int event, int context) {
+void execute(void* event, void* context) {
   callback(&"{\"status\":200, \"body\":\"hello world!\"")
 }
 
 // Called when the host needs to allocate memory to send to web assembly module
 // len - length in bytes needed by host
-int malloc(int len){
+void* malloc(int len){
   ...
 }
 ```
