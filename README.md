@@ -12,27 +12,27 @@ Write HTTP handlers that can run anywhere.
 To create a HTTP handler, your web assembly module simply needs to adhere to a simple spec:
 
 ```C
-// For making requests from host to outside world
-* request - pointer in memory to json string of request
+// For making data requests from host to outside world
+* data - pointer in memory to json strong for request
 * returns a handle that will be used when calling back
-extern int request(void* request);
+extern int request(void* target, void* data);
 
 // Called when request is complete
 // * requestID - the ID that was returned when request was called 
-// * response - a pointer in memory to json string of response
-void httpResponse(int requestID, void* response){
+// * data - a pointer in memory to json string of response data
+void response(int requestID, void* data){
 
 }
 
-// Respond to server to deliver response
-// * response - pointer in memory to json string of response
-extern void callback(void* response);
+// Send data host to deliver response
+// * data - pointer in memory to json string of response
+extern void send(void* data);
 
 // Called when served
 // * event - pointer in memory to json string of event
 // * context - pointer in memory to json string of context in which this server is run ( host specific )
-void execute(void* event, void* context) {
-  callback(&"{\"status\":200, \"body\":\"hello world!\"")
+void execute(void* data, void* context) {
+  respond(&"{\"status\":200, \"body\":\"hello world!\"")
 }
 
 // Called when the host needs to allocate memory to send to web assembly module
