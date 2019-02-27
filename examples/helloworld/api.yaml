@@ -1,0 +1,12 @@
+openapi: 3.0.0
+info:
+  description: "A minimal API that says hello world"
+  version: "1.0.0"
+  title: "Swagger HelloWorld"
+paths:
+  /hello:
+    get:
+      x-wasm-lambda: "hellworld.wasm"
+      responses:
+        200:
+          description: "Returns hello world"
