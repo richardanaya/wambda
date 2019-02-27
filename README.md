@@ -24,7 +24,7 @@ void response(int requestID, void* data){
 
 }
 
-// Send data host to deliver response
+// Send data to host to deliver response
 // * data - pointer in memory to json string of response
 extern void send(void* data);
 
