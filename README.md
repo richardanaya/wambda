@@ -12,37 +12,37 @@ Write HTTP handlers that can run anywhere.
 To create a HTTP handler, your web assembly module simply needs to adhere to a simple spec:
 
 ```C
-// For making HTTP requests to outside world
-* request - pointer in memory to json string of request
+// For making data requests from host to outside world
+* data - pointer in memory to json strong for request
 * returns a handle that will be used when calling back
-extern int httpRequest(int request);
+extern int request(void* target, void* data);
 
-// Called when HTTP request is complete
-// * requestID - the ID that was returned when httpRequest was called 
-// * response - a pointer in memory to json string of response
-void httpResponse(int requestID, int response){
+// Called when request is complete
+// * requestID - the ID that was returned when request was called 
+// * data - a pointer in memory to json string of response data
+void response(int requestID, void* data){
 
 }
 
-// Respond to server to deliver response
-// * response - pointer in memory to json string of response
-extern void callback(int response);
+// Send data to host to deliver response
+// * data - pointer in memory to json string of response
+extern void send(void* data);
 
 // Called when served
 // * event - pointer in memory to json string of event
 // * context - pointer in memory to json string of context in which this server is run ( host specific )
-void execute(int event, int context) {
-  callback(&"{\"status\":200, \"body\":\"hello world!\"")
+void execute(void* data, void* context) {
+  send(&"{\"status\":200, \"body\":\"hello world!\"")
 }
 
 // Called when the host needs to allocate memory to send to web assembly module
 // len - length in bytes needed by host
-int malloc(int len){
+void* malloc(int len){
   ...
 }
 ```
 
-# Define an HTTP
+# Define an HTTP api
 Writing a swagger will allow routing and input validation to the appropriate web assembly module
 
 ```swagger
