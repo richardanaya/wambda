@@ -32,7 +32,7 @@ extern void send(void* data);
 // * event - pointer in memory to json string of event
 // * context - pointer in memory to json string of context in which this server is run ( host specific )
 void execute(void* data, void* context) {
-  respond(&"{\"status\":200, \"body\":\"hello world!\"")
+  send(&"{\"status\":200, \"body\":\"hello world!\"")
 }
 
 // Called when the host needs to allocate memory to send to web assembly module
